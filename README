@@ -1,0 +1,26 @@
+>>> Prerequisites <<<
+
+Python and its libraries: shodan, simplejson
+
+Tested with:
+Ubuntu Linux x86_64 12.04 3.13.0-35-generic
+Python: 2.7.3
+shodan: 1.0.6
+simplejson: 2.3.2
+
+
+>>> USAGE <<<
+
+There is one mandatory argument which is the query (-q)
+There are optional arguments for 
+1) the api key (if not supplied must be supplied through the first lines of the code)
+2) The -v (verbose) to print informational messages
+
+examples:
+
+$ python query2csv.py -q tridium -k MY_KEY
+$ python query2csv.py -q bacnet 
+$ python query2csv.py -q "default password" -v
+
+Note: for multiword arguments use " "
+
