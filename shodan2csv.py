@@ -80,11 +80,12 @@ def whois_values(ip,  verbosity='False'):
     if verbosity==True:
         print 'Performing whois search ...'
 
-    #call python whois.py ip
-    proc = subprocess.Popen(["python", "whois.py", ip], stdout=subprocess.PIPE)
-    out = proc.communicate()[0]
-    #transform the output from multiline string to list:
-    result_in_list = out.split('\n')
+    #whois the IP
+    options = {}
+    whois_res = NICClient().whois_lookup(options, ip, 1)
+
+    #convert the results from multiline string to list:
+    result_in_list = whois_res.split('\n')
     
     '''We manipulate the output in order to find the tags that we are interested in which are
        defined at the beggining of the file.
